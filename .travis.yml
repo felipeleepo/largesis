@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - 12.16.1
+  - node
+
+install:
+  - yarn install
+
+script:
+  - yarn run build
+
+deploy:
+  provider: pages
+  github-token: $GITHUB_TOKEN
+  on:
+    branch: gh-pages
