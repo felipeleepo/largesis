@@ -9,8 +9,8 @@
     </div> 
 </template>
 <script>
-    import AutoCompletar from '@/components/Estoque/AutoCompletar.vue'
-    import Tabela from '@/components/Estoque/Tabela.vue'
+    import AutoCompletar from '@/components/estoque/saidas/AutoCompletar'
+    import Tabela from '@/components/estoque/saidas/Tabela'
     export default {
         components:{
             AutoCompletar, Tabela
