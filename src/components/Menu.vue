@@ -20,7 +20,7 @@
       drawer: null,
       menu: [
         {icone: 'mdi-home', texto: 'Dashboard', rota: '/dashboard'},
-        {icone: 'mdi-home', texto: 'Sobre', rota: '/sobre'}
+        {icone: 'mdi-home', texto: 'Estoque', rota: '/estoque'}
       ]
     }),
   }
