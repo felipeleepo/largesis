@@ -38,7 +38,7 @@
         this.$emit('Editar', { form: this.tipoForm, obj: item})
       },
       Excluir : function( item ){
-        this.$emit('Excluir', item.id)
+        this.$emit('Excluir', item)
       }
 
     },

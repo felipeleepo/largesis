@@ -107,8 +107,8 @@
                 this.indiceEditado = this.idosos.indexOf(this.novoIdoso)
             },
             Excluir : function(dados){  
-                console.log(dados)              
-                this.idosos.splice(parseInt(dados)-1, 1)
+                let indice = this.idosos.indexOf(dados)              
+                this.idosos.splice(indice, 1)
             }
         }
     }
