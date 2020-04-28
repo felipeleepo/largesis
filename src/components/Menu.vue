@@ -38,25 +38,33 @@
 
     <v-divider></v-divider>
 
-    <v-list-group prepend-icon="mdi-pharmacy">
-      <template v-slot:activator>
+    <v-list-item to="/dashboard">
+      <v-list-item-icon>
+        <v-icon>mdi-pharmacy</v-icon>
+      </v-list-item-icon>
+      <v-list-item-content>
         <v-list-item-title>Medicamentos</v-list-item-title>
-      </template>
-      <v-list-item v-for="m in menu[1]" :key="m.texto" router :to="m.rota">
-        <v-list-item-icon></v-list-item-icon>
-        <v-list-item-content>
-          <v-list-item-title>{{ m.texto }}</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list-group>
+      </v-list-item-content>
+    </v-list-item>
+    
+    <v-divider></v-divider>
 
+    <v-list-item to="/itens-pessoais">
+      <v-list-item-icon>
+        <v-icon>mdi-pharmacy</v-icon>
+      </v-list-item-icon>
+      <v-list-item-content>
+        <v-list-item-title>Itens Pessoais</v-list-item-title>
+      </v-list-item-content>
+    </v-list-item>
+    
     <v-divider></v-divider>
 
     <v-list-group prepend-icon="account_circle">
       <template v-slot:activator>
         <v-list-item-title>Pessoas</v-list-item-title>
       </template>
-      <v-list-item v-for="m in menu[2]" :key="m.texto" router :to="m.rota">
+      <v-list-item v-for="m in menu[1]" :key="m.texto" router :to="m.rota">
         <v-list-item-icon></v-list-item-icon>
         <v-list-item-content>
           <v-list-item-title>{{ m.texto }}</v-list-item-title>
@@ -82,9 +90,6 @@
           {texto: 'Entradas', rota: '/estoque/entradas'},
           { texto: 'Saídas', rota: '/estoque/saidas'},
           {texto: 'Relatórios', rota: '/estoque/relatorios'}
-        ],
-        [
-          {texto: 'Gerenciar', rota: '/medicamentos/gerenciar'}
         ],
         [
           {texto: 'Idosos', rota: '/pessoas/idosos'},

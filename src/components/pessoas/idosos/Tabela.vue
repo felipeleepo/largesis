@@ -33,14 +33,13 @@
         idosos: []  
     }),
     methods: {
-      Editar : function( item ){
+      Editar : function(item){
         this.tipoForm = 'Editar Idoso - #' + item.id
-        this.$emit('Editar', { form: this.tipoForm, obj: item})
+        this.$emit('Editar', {form: this.tipoForm, obj: item})
       },
-      Excluir : function( item ){
+      Excluir : function(item){
         this.$emit('Excluir', item)
       }
-
     },
     created() {
       this.idosos = this.lista1    
