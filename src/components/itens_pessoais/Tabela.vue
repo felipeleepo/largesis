@@ -35,7 +35,6 @@
           { text: 'Categoria', value: 'Categoria'},
           { text: 'Ação', value: 'acao', sortable: false, align: 'center' },
         ],
-        item: null  
     }),
     methods: {
       Editar : function(item){
@@ -61,6 +60,6 @@
         this.$emit('AtualizarPrincipal', false)
       }
       
-    },
+    }
   }
 </script>

@@ -23,6 +23,17 @@
     </v-list-item>
 
     <v-divider></v-divider>
+     
+    <v-list-item to="/idosos">
+      <v-list-item-icon>
+        <v-icon>mdi-home</v-icon>
+      </v-list-item-icon>
+      <v-list-item-content>
+        <v-list-item-title>Idosos</v-list-item-title>
+      </v-list-item-content>
+    </v-list-item>
+
+    <v-divider></v-divider>
 
     <v-list-group prepend-icon="mdi-cart">
       <template v-slot:activator>
@@ -49,17 +60,6 @@
     
     <v-divider></v-divider>
 
-    <v-list-item to="/itens-pessoais">
-      <v-list-item-icon>
-        <v-icon>mdi-pharmacy</v-icon>
-      </v-list-item-icon>
-      <v-list-item-content>
-        <v-list-item-title>Itens Pessoais</v-list-item-title>
-      </v-list-item-content>
-    </v-list-item>
-    
-    <v-divider></v-divider>
-
     <v-list-group prepend-icon="account_circle">
       <template v-slot:activator>
         <v-list-item-title>Pessoas</v-list-item-title>
@@ -78,25 +78,17 @@
 
 <script>
   export default {
-    props: {
-      source: String,
-    },
     data: () => ({
-      drawer: null,
-      dados: [
-
-      ],
       menu: [[
           {texto: 'Entradas', rota: '/estoque/entradas'},
-          { texto: 'Saídas', rota: '/estoque/saidas'},
+          {texto: 'Saídas', rota: '/estoque/saidas'},
           {texto: 'Relatórios', rota: '/estoque/relatorios'}
         ],
         [
           {texto: 'Idosos', rota: '/pessoas/idosos'},
           {texto: 'Profissionais', rota: '/pessoas/profissionais'},
           {texto: 'Perfis', rota: '/pessoas/perfis'}
-        ]
-        
+        ]        
       ]
     }),
   }

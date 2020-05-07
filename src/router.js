@@ -4,6 +4,7 @@ import Dashboard from '@/components/Dashboard'
 import Sobre from '@/components/Sobre'
 import EstoqueSaida from '@/components/estoque/saidas/Principal'
 import ItensPessoais from '@/components/itens_pessoais/Principal'
+import Idosos from '@/components/idosos/Principal'
 import PessoasIdosos from '@/components/pessoas/idosos/Principal'
 
 Vue.use(Router)
@@ -29,6 +30,11 @@ export default new Router({
             path: '/itens-pessoais/',
             name: 'ItensPessoais',
             component: ItensPessoais 
+        },
+        {
+            path: '/idosos',
+            name: 'Idosos',
+            component: Idosos 
         },
         {
             path: '/pessoas/idosos',

@@ -40,6 +40,9 @@
             Atualizar : function(dado){
                 this.dialog = dado
             }
+        },
+        created(){
+            console.log('Parâmetros', this.$route.params)
         }
     }
 </script>
