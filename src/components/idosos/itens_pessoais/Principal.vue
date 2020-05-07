@@ -16,7 +16,7 @@
     </v-container>
 </template>
 <script>
-    import Tabela from '@/components/itens_pessoais/Tabela'
+    import Tabela from '@/components/idosos/itens_pessoais/Tabela'
     export default {
         components:{
             Tabela

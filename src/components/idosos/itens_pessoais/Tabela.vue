@@ -23,7 +23,7 @@
 </template>
 
 <script>
-  import Formulario from '@/components/itens_pessoais/Formulario'
+  import Formulario from '@/components/idosos/itens_pessoais/Formulario'
   export default {
     props:['lista', 'form', 'dialog'],
     components: { Formulario },
