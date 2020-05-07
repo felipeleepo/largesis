@@ -58,8 +58,8 @@
           this.lista.splice(indice, 1, dado.novo)
         }
         this.$emit('AtualizarPrincipal', false)
-      }
-      
+        this.item = undefined
+      }      
     }
   }
 </script>

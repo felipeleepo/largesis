@@ -62,9 +62,15 @@ export default {
     },
     watch : {
         dialog : function(){   
-            this.Id = this.item.Id        
-            this.Nome = this.item.Nome
-            this.dtNasc = this.item.dtNasc
+            if(this.item === undefined){
+                this.Id = ''        
+                this.Nome = ''
+                this.dtNasc = '00/00/0000'
+            }else{
+                 this.Id = this.item.Id        
+                this.Nome = this.item.Nome
+                this.dtNasc = this.item.dtNasc
+            }           
         }
     }
 }

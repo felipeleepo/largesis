@@ -65,7 +65,11 @@ export default {
     },
     watch : {
         dialog : function(){
-            if(this.form === 'Editar Item'){
+            if(this.item === undefined){            
+                this.Nome = ''
+                this.Unidade = 1
+                this.Categoria = ''
+            }else{
                 this.Nome = this.item.Nome
                 this.Unidade = this.item.Unidade
                 this.Categoria = this.item.Categoria

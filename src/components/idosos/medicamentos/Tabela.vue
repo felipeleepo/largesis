@@ -11,21 +11,12 @@
     hide-default-footer
   >
     <template v-slot:item.acao="{item}">
-      <v-btn :to="{ name: 'Medicamentos', params: { Id: item.Id }}" class="mx-2" small color="green">
-        Medicamentos
-      </v-btn>
-      <v-btn :to="{ name: 'ItensPessoais', params: { Id: item.Id }}" class="mx-2" small color="green">
-        Itens Pessoais
-      </v-btn>
-      <v-btn @click="Editar(item)" class="mx-2" fab small color="info">
-        <v-icon>mdi-pencil</v-icon>
-      </v-btn>
-      <v-btn @click="Excluir(item)" class="mx-2" fab small color="error">
-        <v-icon>mdi-delete</v-icon>
+      <v-btn @click="Retirar(item)" class="mx-2" small color="info">
+        Retirar
       </v-btn>
     </template>
     <template v-slot:no-data>
-      <p>Nenhum Idoso encontrado.</p>
+      <p>Nenhum Medicamento encontrado.</p>
     </template>
   </v-data-table>
   </v-card>
@@ -34,7 +25,7 @@
 </template>
 
 <script>
-  import Formulario from '@/components/idosos/Formulario'
+  import Formulario from '@/components/idosos/medicamentos/Formulario'
   export default {
     props:['lista', 'form', 'dialog'],
     components: {Formulario},
@@ -42,33 +33,27 @@
       search: '',
       headers: [
           { text: '#', align: 'start', value: 'Id',},
-          { text: 'Nome', value: 'Nome' },
-          { text: 'Data de Nascimento', value: 'dtNasc', align: 'center' },
+          { text: 'Descrição', value: 'Nome' },
+          { text: 'Quantidade', value: 'Qtd', align: 'center' },
           { text: 'Ação', value: 'acao', sortable: false, align: 'center' },
       ],
     }),methods: {
-      Editar : function(item){
-        this.form = 'Editar Idoso #' + item.Id
+      Retirar : function(item){
+        this.form = '#' + item.Id + ' - ' + item.Nome
         this.item = item
         this.dialog = true
         console.log(this.item)
-      },
-      Excluir : function(item){
-        // API EXCLUIR
-        
-        // swal
-        let indice = this.lista.indexOf(item)
-        this.lista.splice(indice, 1)
-        this.$emit('AtualizarPrincipal', false)
       },
       Atualizar : function(dado){
         if(!dado.antigo){
           this.lista.push(dado.novo)
         }else{
           let indice = this.lista.indexOf(dado.antigo)
-          this.lista.splice(indice, 1, dado.novo)
-        }
-        this.$emit('AtualizarPrincipal', false)
+          if(parseInt(dado.novo.Qtd) > 0)
+            this.lista.splice(indice, 1, dado.novo)
+          else
+            this.lista.splice(indice, 1)
+        }this.$emit('AtualizarPrincipal', false)
         this.item = undefined
       }      
     }
