@@ -11,10 +11,10 @@
     hide-default-footer
   >
     <template v-slot:item.acao="{item}">
-      <v-btn :to="{ name: 'Medicamentos', params: { Id: item.Id }}" class="mx-2" small color="green">
+      <v-btn :to="{ name: 'IdososMedicamentos', params: { Id: item.Id }}" class="mx-2" small color="green">
         Medicamentos
       </v-btn>
-      <v-btn :to="{ name: 'ItensPessoais', params: { Id: item.Id }}" class="mx-2" small color="green">
+      <v-btn :to="{ name: 'IdososItensPessoais', params: { Id: item.Id }}" class="mx-2" small color="green">
         Itens Pessoais
       </v-btn>
       <v-btn @click="Editar(item)" class="mx-2" fab small color="info">

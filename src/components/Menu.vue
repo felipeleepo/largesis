@@ -49,7 +49,7 @@
 
     <v-divider></v-divider>
 
-    <v-list-item to="/dashboard">
+    <v-list-item to="/medicamentos">
       <v-list-item-icon>
         <v-icon>mdi-pharmacy</v-icon>
       </v-list-item-icon>

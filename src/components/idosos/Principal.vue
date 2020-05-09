@@ -32,7 +32,7 @@
         }),
         methods: {
             Novo : function(){
-                this.form = 'Novo Item'
+                this.form = 'Novo Medicamento'
                 this.dialog = true
             },
             Atualizar : function(dado){
